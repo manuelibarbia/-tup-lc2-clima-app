@@ -1,6 +1,10 @@
 #form-city-list select {
     padding: 5px;
     border-radius: 5px;
+    width: auto;
+    height: 40px;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 #form-city-list button{
@@ -9,4 +13,17 @@
     padding: 7px;
     border-radius: 7px;
     border: solid rgb(0 89 76) 1px;
+    width: 100px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#section-weather-result .card {
+    margin: 30px;
+    padding: 5px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 1px 1px 15px;
+    height: 315px;
 }
