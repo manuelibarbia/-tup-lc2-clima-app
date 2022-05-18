@@ -27,14 +27,18 @@
     <main>
         <h2>Agregar Ciudad</h2>
         <section>
-            <form action="" method="post" target="_self">
+            <form action="" method="post" target="_self" class="add-city">
                 <label for="city-to-add">Ingrese la ciudad a agregar:</label>
-                <input type="text" name="city-to-add" id="city-to-add">
-                <br>
+                <input type="text" name="city-to-add" id="city-to-add" autocomplete="off">
                 <button>Agregar</button>
             </form>
         </section>
     </main>
+    <div class="mensajes">
+        <p id="exito">Ciudad agregada con éxito</p>
+        <p id="error">Error: La ciudad ingresada no se encuentra en la API o se produjo un error al consultar</p>
+        <p id="almacenada">La ciudad ingresada ya se encuentra almacenada</p>
+    </div>
     <footer>
         <p>
             Desarrollado con ♥ - LC2
