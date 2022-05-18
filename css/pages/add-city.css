@@ -32,7 +32,7 @@ section form.add-city button:hover {
     cursor: pointer;
 }
 
-div.mensajes{
+div.message{
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -40,7 +40,7 @@ div.mensajes{
     text-align: center;
 }
 
-#exito {
+#success {
     padding: 20px;
     background-color: #28a745;
     border-radius: 20px;
@@ -58,7 +58,7 @@ div.mensajes{
     margin-bottom: 15px;
 }
 
-#almacenada {
+#stored {
     padding: 20px;
     margin: 2px;
     background-color: #ffc107;
