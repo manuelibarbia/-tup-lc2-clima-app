@@ -11,12 +11,16 @@
     background-color: rgb(0 89 76);
     color: white;
     padding: 7px;
-    border-radius: 7px;
+    border-radius: 10px;
     border: solid rgb(0 89 76) 1px;
     width: 100px;
     height: 40px;
     font-size: 14px;
     font-weight: bold;
+}
+
+#form-city-list button:hover {
+    cursor: pointer;
 }
 
 #section-weather-result .card {
