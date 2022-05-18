@@ -72,13 +72,13 @@ main {
     margin-top: 120px;
     overflow: auto;
     padding: 16px;
-    padding-bottom: 60px;
+    padding-bottom: 40px;
     height: calc (100% - 120px);
 }
 
 h1 {
     text-align: center;
-    margin: 0;
+    margin: -14px;
     color: white;
 }
 
@@ -92,7 +92,7 @@ h2 {
     color: var(--color-theme);
     margin: 16px 0;
     text-align: center;
-    margin: 40px;
+    margin: 10px;
 }
 
 h3 {
