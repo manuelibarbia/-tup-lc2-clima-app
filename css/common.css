@@ -34,7 +34,7 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    background: linear-gradient(to right, #00594c, #04917b);
+    background: linear-gradient(to right, #00594c, #04957d);
     border-bottom:solid #5df2d6 2px;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
@@ -55,8 +55,8 @@ nav li a {
     padding: 16px 12px;
     text-align: center;
     text-decoration: none;
-    font-size: 1em;
-    font-weight: bold;
+    font-size: 18px;
+    font-weight: bolder;
     color: var(--color-active);
 }
 
@@ -108,7 +108,7 @@ main section {
 footer {
     position: fixed;
     bottom: 0px;
-    background: linear-gradient(to right, #00594c, #04917b);
+    background: linear-gradient(to right, #00594c, #04957d);
     width: 100%;
     text-align: center;
     padding-top: 10px;
