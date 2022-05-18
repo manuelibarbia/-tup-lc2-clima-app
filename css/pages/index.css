@@ -8,11 +8,11 @@
 }
 
 #form-city-list button{
-    background-color: rgb(0 89 76);
+    background-color: #00594c;
     color: white;
     padding: 7px;
     border-radius: 10px;
-    border: solid rgb(0 89 76) 1px;
+    border: solid #00594c 1px;
     width: 100px;
     height: 40px;
     font-size: 14px;
