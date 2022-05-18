@@ -25,12 +25,14 @@
         </nav>
     </header>
     <main>
-        <h2>Ayuda Clima App v.1.0</h2>
-        <p>Esta App te permite consultar el clima de una ciudad en particular utilizando la API de <a
-                href="https://openweathermap.org/api" target="_blank">OpenWeatherMap</a>.</p>
-        <p>Para poder consultar el clima, primero deberá <a href="add-city.html">Agregar una ciudad</a> y luego
-            seleccionar la Ciudad en cuestión desde la página <a href="index.html">Clima</a>.</p>
-        <section>
+        <section class="info">
+            <h2>Ayuda Clima App v.1.0</h2>
+            <p>Esta App te permite consultar el clima de una ciudad en particular utilizando la API de <a
+                    href="https://openweathermap.org/api" target="_blank">OpenWeatherMap</a>.</p>
+            <p>Para poder consultar el clima, primero deberá <a href="add-city.html">Agregar una ciudad</a> y luego
+                seleccionar la Ciudad en cuestión desde la página <a href="index.html">Clima</a>.</p>
+        </section>
+        <section class="formulary">
             <form action="" method="post" target="_self">
                 <label for="name">Nombre:</label>
                 <input type="text" name="name" id="name">
@@ -41,11 +43,16 @@
                 <label for="message">Mensaje:</label>
                 <textarea name="message" id="message" cols="30" rows="10"></textarea>
                 <br>
-                <button type="reset">Limpiar</button>
-                <button type="submit">Enviar</button>
+                <div class="buttons">
+                    <button type="reset">Limpiar</button>
+                    <button type="submit">Enviar</button>
+                </div>
             </form>
         </section>
     </main>
+    <div class="wrong-mail">
+        <p>Ingrese un Email válido</p>
+    </div>
     <footer>
         <p>
             Desarrollado con ♥ - LC2
