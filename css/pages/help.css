@@ -52,10 +52,3 @@ div.wrong-mail {
     color: white;
     justify-content: center;
 }
-
-div.wrong-mail p {
-    padding: 20px;
-    border-radius: 20px;
-    width: 500px;
-    background-color: #dc3545;
-}

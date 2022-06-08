@@ -125,6 +125,26 @@ main p {
     margin-bottom: 16px;
 }
 
+.message{
+    color: white;
+    padding: 20px;
+    border-radius: 20px;
+    width: 500px;
+    margin: 5px;
+}
+
+.message.success{
+    background-color: #28a745;
+}
+
+.message.error{
+    background-color: #dc3545;
+}
+
+.message.notice{
+    background-color: #ffc107;
+}
+
 @media (min-width: 400px) {
     main {
         padding-left: 10%;
