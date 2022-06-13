@@ -7,9 +7,13 @@ function saveInfoInLocalStorage() {
     }
 
     if (campo_lleno) {
-        alert(city_to_add.value)
-    }
-    else {
+        let P_success = document.createElement("p");
+        let P_success_content = document.createTextNode("Ciudad agregada con éxito");
+        P_success.appendChild(P_success_content);
+        let div_messages = document.getElementById("messages_add_city");
+        div_messages.appendChild(P_success);
+        P_success.setAttribute("class", "message success")
+    } else {
         let P_error = document.createElement("p");
         let P_error_content = document.createTextNode("La ciudad ingresada no se encuentra en la API o se produjo un error al consultar");
         P_error.appendChild(P_error_content);
