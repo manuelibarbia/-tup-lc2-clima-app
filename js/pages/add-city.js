@@ -1,11 +1,10 @@
 // local Storage va a guardar un arreglo de ciudades agregadas
+let cities = [];
 
-let newCity = []
-
-function saveInfoInLocalStorage() {
-    let city = document.getElementById("city-to-add");
-    newCity.push(city.value);
-    localStorage.setItem("CITIES", JSON.stringify(newCity));
+function addNewCityToLocalStorage() {
+    let newCity = document.getElementById("city-to-add");
+    cities.push(newCity.value);
+    localStorage.setItem("CITIES", JSON.stringify(cities));
 }
 
 function getCitiesFromLocalStorage() {
@@ -16,12 +15,6 @@ function getCitiesFromLocalStorage() {
         cities = [];
     }
     return cities;
-}
-
-function addNewCityToLocalStorage(newCity) {
-    let cities = getCitiesFromLocalStorage();
-    cities.push(newCity);
-    localStorage.setItem("CITIES", JSON.stringify(cities));
 }
 
 // function validateInfo() {
