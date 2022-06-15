@@ -1,8 +1,11 @@
 // local Storage va a guardar un arreglo de ciudades agregadas
 
+let newCity = []
+
 function saveInfoInLocalStorage() {
-    let newCity = document.getElementById("city-to-add");
-    localStorage.setItem("CITIES", JSON.stringify(newCity.value));
+    let city = document.getElementById("city-to-add");
+    newCity.push(city.value);
+    localStorage.setItem("CITIES", JSON.stringify(newCity));
 }
 
 function getCitiesFromLocalStorage() {
