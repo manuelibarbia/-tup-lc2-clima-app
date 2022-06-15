@@ -1,5 +1,5 @@
 // local Storage va a guardar un arreglo de ciudades agregadas
-let cities = [];
+let cities = getCitiesFromLocalStorage();
 
 function addNewCityToLocalStorage() {
     let newCity = document.getElementById("city-to-add");
