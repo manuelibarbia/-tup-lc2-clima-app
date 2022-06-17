@@ -6,8 +6,13 @@ function addNewCityToLocalStorage() {
     if (validateCity(newCity.value) === true && newCity.value !== "") {
         cities.push(newCity.value);
         localStorage.setItem("CITIES", JSON.stringify(cities));
-    } else {
-        alert("Error: ingresó una ciudad ya almacenada o el campo no fue completado.")
+        showMessageSuccess();
+    } else{
+        if (validateCity(newCity.value) === false && newCity.value !== "") {
+            showMessageNotice();
+        } else {
+            showMessageError();
+        }
     }
     newCity.value = ""
 }
@@ -24,7 +29,6 @@ function getCitiesFromLocalStorage() {
 
 function validateCity(newCity) {
     list_validate = localStorage.getItem("CITIES");
-    console.log(list_validate)
     if (list_validate != null)
     {
         list_validate = list_validate.toLowerCase()
@@ -40,6 +44,36 @@ function validateCity(newCity) {
     } else {
         return true;
     }
+}
+
+function showMessageSuccess() {
+    let div_messages = document.getElementById("messages_add_city")
+    div_messages.innerHTML = ""
+    let P_success = document.createElement("p");
+    let P_success_content = document.createTextNode("Ciudad agregada con éxito");
+    P_success.appendChild(P_success_content);
+    div_messages.appendChild(P_success);
+    P_success.setAttribute("class", "message success")
+}
+
+function showMessageError() {
+    let div_messages = document.getElementById("messages_add_city")
+    div_messages.innerHTML = ""
+    let P_error = document.createElement("p");
+    let P_error_content = document.createTextNode("La ciudad ingresada no se encuentra en la API o se produjo un error al consultar");
+    P_error.appendChild(P_error_content);
+    div_messages.appendChild(P_error);
+    P_error.setAttribute("class", "message error")
+}
+
+function showMessageNotice() {
+    let div_messages = document.getElementById("messages_add_city")
+    div_messages.innerHTML = ""
+    let P_notice = document.createElement("p");
+    let P_notice_content = document.createTextNode("La ciudad ingresada ya se encuentra almacenada");
+    P_notice.appendChild(P_notice_content);
+    div_messages.appendChild(P_notice);
+    P_notice.setAttribute("class", "message notice")
 }
 
 // function validateCity(newCity) {
@@ -62,12 +96,12 @@ function validateCity(newCity) {
 //     let div_messages = document.getElementById("messages_add_city")
 //     div_messages.innerHTML = ""
 //     if (campo_lleno) {
-//         let P_success = document.createElement("p");
-//         let P_success_content = document.createTextNode("Ciudad agregada con éxito");
-//         P_success.appendChild(P_success_content);
+//         let P_error = document.createElement("p");
+//         let P_error_content = document.createTextNode("Ciudad agregada con éxito");
+//         P_error.appendChild(P_error_content);
 //         let div_messages = document.getElementById("messages_add_city");
-//         div_messages.appendChild(P_success);
-//         P_success.setAttribute("class", "message success")
+//         div_messages.appendChild(P_error);
+//         P_error.setAttribute("class", "message error")
 //     } else {
 //         let P_error = document.createElement("p");
 //         let P_error_content = document.createTextNode("La ciudad ingresada no se encuentra en la API o se produjo un error al consultar");
