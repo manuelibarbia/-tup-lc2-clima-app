@@ -3,12 +3,13 @@ let cities = getCitiesFromLocalStorage();
 
 function addNewCityToLocalStorage() {
     let newCity = document.getElementById("city-to-add");
-    if (validateCity(newCity.value) === true) {
+    if (validateCity(newCity.value) === true && newCity.value !== "") {
         cities.push(newCity.value);
         localStorage.setItem("CITIES", JSON.stringify(cities));
     } else {
-        alert("La ciudad ya se encuentra almacenada")
+        alert("Error: ingresó una ciudad ya almacenada o el campo no fue completado.")
     }
+    newCity.value = ""
 }
 
 function getCitiesFromLocalStorage() {
@@ -21,19 +22,23 @@ function getCitiesFromLocalStorage() {
     return cities;
 }
 
-
 function validateCity(newCity) {
-    list_validate = localStorage.getItem("CITIES")
-    list_validate = JSON.parse(list_validate)
-    if (list_validate != null && list_validate != []) {
-        alert("La lista tiene contenido")
+    list_validate = localStorage.getItem("CITIES");
+    console.log(list_validate)
+    if (list_validate != null)
+    {
+        list_validate = list_validate.toLowerCase()
+    }
+    list_validate = JSON.parse(list_validate);
+    newCity = newCity.toLowerCase();
+    if (list_validate != null) {
         if (list_validate.includes(newCity)) {
-            return false
+            return false;
         }else {
-            return true
+            return true;
         }
     } else {
-        return true
+        return true;
     }
 }
 
