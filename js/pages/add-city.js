@@ -7,12 +7,10 @@ function addNewCityToLocalStorage() {
         cities.push(newCity.value);
         localStorage.setItem("CITIES", JSON.stringify(cities));
         showMessageSuccess();
-    } else {
-        if (validateCity(newCity.value) === false && newCity.value !== "") { // si el campo no está vacío, pero la ciudad ya está almacenada
+    } else if (validateCity(newCity.value) === false && newCity.value !== "") { // si el campo no está vacío, pero la ciudad ya está almacenada
             showMessageNotice();
-        } else {
-            showMessageError();                                              // si el campo está vacío
-        }
+    } else {
+        showMessageError();                                              // si el campo está vacío
     }
     newCity.value = ""
 }
