@@ -3,15 +3,15 @@ let cities = getCitiesFromLocalStorage();
 
 function addNewCityToLocalStorage() {
     let newCity = document.getElementById("city-to-add");
-    if (validateCity(newCity.value) === true && newCity.value !== "") {
+    if (validateCity(newCity.value) === true && newCity.value !== "") { // valido que la ciudad no esté almacenada previamente ni sea un campo vacío
         cities.push(newCity.value);
         localStorage.setItem("CITIES", JSON.stringify(cities));
         showMessageSuccess();
-    } else{
-        if (validateCity(newCity.value) === false && newCity.value !== "") {
+    } else {
+        if (validateCity(newCity.value) === false && newCity.value !== "") { // si el campo no está vacío, pero la ciudad ya está almacenada
             showMessageNotice();
         } else {
-            showMessageError();
+            showMessageError();                                              // si el campo está vacío
         }
     }
     newCity.value = ""
@@ -29,20 +29,19 @@ function getCitiesFromLocalStorage() {
 
 function validateCity(newCity) {
     list_validate = localStorage.getItem("CITIES");
-    if (list_validate != null)
-    {
+    if (list_validate != null) {
         list_validate = list_validate.toLowerCase()
     }
     list_validate = JSON.parse(list_validate);
     newCity = newCity.toLowerCase();
-    if (list_validate != null) {
-        if (list_validate.includes(newCity)) {
-            return false;
-        }else {
+    if (list_validate != null) {                         // Si la lista no está vacía, significa que ya tiene ciudades, por lo que entro a otro if:
+        if (list_validate.includes(newCity)) {           // si la ciudad ingresada ya estaba dentro de la lista, devuelvo false (no se puede almacenar la ciudad).
+            return false;                                // Caso contrario, devuelvo true.
+        } else {
             return true;
         }
     } else {
-        return true;
+        return true;                                     // Si la lista está vacía, devuelvo true, ya que se puede ingresar una nueva ciudad sin problema.
     }
 }
 
