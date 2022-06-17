@@ -3,7 +3,7 @@ let cities = getCitiesFromLocalStorage();
 
 function addNewCityToLocalStorage() {
     let newCity = document.getElementById("city-to-add");
-    if (validateCity(newCity)) {
+    if (validateCity(newCity.value) === true) {
         cities.push(newCity.value);
         localStorage.setItem("CITIES", JSON.stringify(cities));
     } else {
@@ -25,13 +25,15 @@ function getCitiesFromLocalStorage() {
 function validateCity(newCity) {
     list_validate = localStorage.getItem("CITIES")
     list_validate = JSON.parse(list_validate)
-    if (list_validate != null) {
+    if (list_validate != null && list_validate != []) {
         alert("La lista tiene contenido")
-        if (list_validate.includes(newCity.value)) {
+        if (list_validate.includes(newCity)) {
             return false
         }else {
             return true
         }
+    } else {
+        return true
     }
 }
 
