@@ -20,4 +20,3 @@ function getCitiesFromLocalStorage() {
 //         selector.innerHTML += `<option value="${cities[i]}">${cities[i]}</option>`
 //     }
 // }
-//
