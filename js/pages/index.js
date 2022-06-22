@@ -1,8 +1,14 @@
 const cities_select = document.getElementById('select-city');
+let city_to_consult = addCityToConsult(cities_select.value)
 const api_key = "ff0ed85d936b39b952700f07222bdfea";
 let api_url = `api.openweathermap.org/data/2.5/weather?q=Rosario&appid=${api_key}&units=metric&lang=es`
 
 addCitiesToSelect();
+
+function addCityToConsult (cities_select) {
+    let city_to_consult = cities_select;
+    return city_to_consult;
+}
 
 function addCitiesToSelect() {
     if (cities == "") {
