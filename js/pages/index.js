@@ -11,6 +11,15 @@ function addCitiesToSelect() {
     }
 }
 
+// const apiUrl = "https://pokeapi.co/api/v2/"
+// async function buscarPokemon(nombrePokemon) {
+//     const respuestaApi = await fetch(`${apiUrl}pokemon/${nombrePokemon}`, {
+//         method: 'get'
+//     })
+
+//     return respuestaApi
+// }
+
 // function addCitiesToSelect() {
 //     if (cities == "") {
 //         cities_select.innerHTML = `<option value="empty" disabled selected>No hay ciudades</option>`
