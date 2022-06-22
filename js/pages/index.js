@@ -1,14 +1,7 @@
 const cities_select = document.getElementById('select-city');
-let city_to_consult = addCityToConsult(cities_select.value)
 const api_key = "ff0ed85d936b39b952700f07222bdfea";
-let api_url = `api.openweathermap.org/data/2.5/weather?q=Rosario&appid=${api_key}&units=metric&lang=es`
 
 addCitiesToSelect();
-
-function addCityToConsult (cities_select) {
-    let city_to_consult = cities_select;
-    return city_to_consult;
-}
 
 function addCitiesToSelect() {
     if (cities == "") {
@@ -20,11 +13,21 @@ function addCitiesToSelect() {
     }
 }
 
-async function consultApi() {
-    const api_response = await fetch(`${api_url}`, {
-        method: 'get'
-    })
-    return api_response
+// async function consultApi() {
+//     const api_response = await fetch(`api.openweathermap.org/data/2.5/weather?q=${cities_select.value}&appid=${api_key}&units=metric&lang=es`, {
+//         method: 'get'
+//     })
+//     return api_response
+// }
+
+function consultApi() {
+    let city_to_consult = cities_select.value;
+    fetch(`api.openweathermap.org/data/2.5/weather?q=${city_to_consult}&appid=${api_key}&units=metric&lang=es`)
+        .then((response) => {
+            console.log(response)
+        }).catch((error) => {
+            console.error(error);
+        });
 }
 
 // const apiUrl = "https://pokeapi.co/api/v2/"
