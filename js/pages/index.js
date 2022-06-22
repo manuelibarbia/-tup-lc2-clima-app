@@ -1,23 +1,12 @@
 const cities_select = document.getElementById('select-city');
-console.log(cities_select);
+addCitiesToSelect(cities_select, cities);
 
-console.log(cities);
-
-// function getCitiesFromLocalStorage() {
-//     let cities = localStorage.getItem("CITIES");
-//     if (cities) {
-//         cities = JSON.parse(cities);
-//     } else {
-//         cities = [];
-//     }
-//     return cities;
-// }
-
-// function addCitiesToSelector () {
-//     let cities = getCitiesFromLocalStorage();
-    
-//     selector.innerHTML += `<option value="" disabled selected>Seleccionar ciudad</option>`
-//     for (let i = 0; i < cities.length; i++) {
-//         selector.innerHTML += `<option value="${cities[i]}">${cities[i]}</option>`
-//     }
-// }
+function addCitiesToSelect(cities_select, cities) {
+    for (i=0; i<cities.length; i++) {
+        let city_in_select = document.createElement("option")
+        let city_in_select_content = document.createTextNode(`${cities[i]}`);
+        city_in_select.appendChild(city_in_select_content);
+        city_in_select.setAttribute(`value`, `${cities[i]}`);
+        cities_select.appendChild(city_in_select)
+    }
+}
