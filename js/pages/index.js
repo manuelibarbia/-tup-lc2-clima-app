@@ -1,4 +1,4 @@
-let selector = document.getElementById("select-city");
+let selector = document.querySelector('#select-city')
 console.log(selector)
 
 
