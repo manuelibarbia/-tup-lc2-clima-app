@@ -15,12 +15,12 @@ function addNewCityToLocalStorage() {
 }
 
 function validateCity(newCity) {
-    list_validate = localStorage.getItem("CITIES");
+    let list_validate = localStorage.getItem("CITIES");
     if (list_validate != null) {
-        list_validate = list_validate.toLowerCase()
+        list_validate = list_validate.toLowerCase()      // Paso las ciudades a minúsculas para comparar luego
     }
     list_validate = JSON.parse(list_validate);
-    newCity = newCity.toLowerCase();
+    newCity = newCity.toLowerCase();                     // Paso la ciudad ingresada a minúsculas
     if (list_validate != null) {                         // Si la lista no está vacía, significa que ya tiene ciudades, por lo que entro a otro if:
         if (list_validate.includes(newCity)) {           // si la ciudad ingresada ya estaba dentro de la lista, devuelvo false (no se puede almacenar la ciudad).
             return false;                                // Caso contrario, devuelvo true.
