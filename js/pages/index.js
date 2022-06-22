@@ -1,4 +1,7 @@
 const cities_select = document.getElementById('select-city');
+const api_key = "ff0ed85d936b39b952700f07222bdfea";
+let api_url = `api.openweathermap.org/data/2.5/weather?q=Rosario&appid=${api_key}&units=metric&lang=es`
+
 addCitiesToSelect();
 
 function addCitiesToSelect() {
@@ -9,6 +12,13 @@ function addCitiesToSelect() {
             cities_select.innerHTML += `<option value="${cities[i]}">${cities[i]}</option>`
         }
     }
+}
+
+async function consultApi() {
+    const api_response = await fetch(`${api_url}`, {
+        method: 'get'
+    })
+    return api_response
 }
 
 // const apiUrl = "https://pokeapi.co/api/v2/"
