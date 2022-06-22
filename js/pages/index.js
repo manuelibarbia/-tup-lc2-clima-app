@@ -1,16 +1,17 @@
-let selector = document.querySelector('#select-city')
-console.log(selector)
+const cities_select = document.getElementById('select-city');
+console.log(cities_select);
 
+console.log(cities);
 
-function getCitiesFromLocalStorage() {
-    let cities = localStorage.getItem("CITIES");
-    if (cities) {
-        cities = JSON.parse(cities);
-    } else {
-        cities = [];
-    }
-    return cities;
-}
+// function getCitiesFromLocalStorage() {
+//     let cities = localStorage.getItem("CITIES");
+//     if (cities) {
+//         cities = JSON.parse(cities);
+//     } else {
+//         cities = [];
+//     }
+//     return cities;
+// }
 
 // function addCitiesToSelector () {
 //     let cities = getCitiesFromLocalStorage();

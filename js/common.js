@@ -1,3 +1,5 @@
+let cities = getCitiesFromLocalStorage();
+
 function getCitiesFromLocalStorage() {
     let cities = localStorage.getItem("CITIES");
     if (cities) {
@@ -7,5 +9,3 @@ function getCitiesFromLocalStorage() {
     }
     return cities;
 }
-
-//

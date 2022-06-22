@@ -1,10 +1,9 @@
 // local Storage va a guardar un arreglo de ciudades agregadas
-let cities = getCitiesFromLocalStorage();
 
 function addNewCityToLocalStorage() {
     let newCity = document.getElementById("city-to-add");
     if (validateCity(newCity.value) === true && newCity.value !== "") { // valido que la ciudad no esté almacenada previamente ni sea un campo vacío
-        cities.push(newCity.value);
+        cities.push(newCity.value);  //cities está definida en common.js
         localStorage.setItem("CITIES", JSON.stringify(cities));
         showMessageSuccess();
     } else if (validateCity(newCity.value) === false && newCity.value !== "") { // si el campo no está vacío, pero la ciudad ya está almacenada
@@ -13,16 +12,6 @@ function addNewCityToLocalStorage() {
         showMessageError();                                              // si el campo está vacío
     }
     newCity.value = ""
-}
-
-function getCitiesFromLocalStorage() {
-    let cities = localStorage.getItem("CITIES");
-    if (cities) {
-        cities = JSON.parse(cities);
-    } else {
-        cities = [];
-    }
-    return cities;
 }
 
 function validateCity(newCity) {
