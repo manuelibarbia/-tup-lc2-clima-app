@@ -1,5 +1,4 @@
 const cities_select = document.getElementById('select-city');
-const api_key = "ff0ed85d936b39b952700f07222bdfea";
 const button = document.getElementById("button-consult");
 
 addCitiesToSelect();

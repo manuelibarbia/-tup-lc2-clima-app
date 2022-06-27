@@ -50,4 +50,10 @@ function weatherInfo(data) {
                     <p>Velocidad del Viento: ${wind}km/h</p>
                     <p>Presión: ${pressure} P</p>
                 </div>`
+
+    let weather_result = document.getElementById("section-weather-result");
+    if (weather_result) {
+        weather_result.innerHTML = "";
+        weather_result.innerHTML += card;
+    }
 }
