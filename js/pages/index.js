@@ -15,7 +15,7 @@ function addCitiesToSelect() {
 }
 
 async function consultApi(city_to_consult) {
-    const api_response = await fetch(`api.openweathermap.org/data/2.5/weather?q=${city_to_consult}&appid=${api_key}&units=metric&lang=es`, {
+    const api_response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city_to_consult}&appid=${api_key}&units=metric&lang=es`, {
         method: 'get'
     })
     return api_response
