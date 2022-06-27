@@ -14,11 +14,14 @@ function addCitiesToSelect() {
     }
 }
 
-async function consultApi(city_to_consult) {
-    const api_response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city_to_consult}&appid=${api_key}&units=metric&lang=es`, {
-        method: 'get'
-    })
-    return api_response
+button.addEventListener("click", async() => {
+    const city_to_consult = cities_select.value
+    const resultadoBusqueda = await consultApi(city_to_consult)
+    console.log(resultadoBusqueda)
+})
+
+function addCardToApp() {
+    consultApi(city_to_consult);
 }
 
 // function consultApi() {
@@ -40,11 +43,6 @@ async function consultApi(city_to_consult) {
 //     return respuestaApi
 // }
 
-button.addEventListener("click", async() => {
-    const city_to_consult = cities_select.value
-    const resultadoBusqueda = await consultApi(city_to_consult)
-    console.log(resultadoBusqueda)
-})
 
 // function addCitiesToSelect() {
 //     if (cities == "") {
