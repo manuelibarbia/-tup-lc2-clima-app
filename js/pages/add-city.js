@@ -1,3 +1,5 @@
+const div_messages = document.getElementById("messages_add_city")
+
 function addNewCityToLocalStorage() {
     let newCity = document.getElementById("city-to-add");
     if (validateCity(newCity.value) === true && newCity.value !== "") { // valido que la ciudad no esté almacenada previamente ni sea un campo vacío
@@ -9,7 +11,7 @@ function addNewCityToLocalStorage() {
     } else {
         showMessageError();                                              // si el campo está vacío
     }
-    newCity.value = ""
+    newCity.value = ""                                                   // limpio el input de ciudad
 }
 
 function validateCity(newCity) {
@@ -31,31 +33,13 @@ function validateCity(newCity) {
 }
 
 function showMessageSuccess() {
-    let div_messages = document.getElementById("messages_add_city")
-    div_messages.innerHTML = ""
-    let P_success = document.createElement("p");
-    let P_success_content = document.createTextNode("Ciudad agregada con éxito");
-    P_success.appendChild(P_success_content);
-    div_messages.appendChild(P_success);
-    P_success.setAttribute("class", "message success")
-}
-
-function showMessageError() {
-    let div_messages = document.getElementById("messages_add_city")
-    div_messages.innerHTML = ""
-    let P_error = document.createElement("p");
-    let P_error_content = document.createTextNode("La ciudad ingresada no se encuentra en la API o se produjo un error al consultar");
-    P_error.appendChild(P_error_content);
-    div_messages.appendChild(P_error);
-    P_error.setAttribute("class", "message error")
+    div_messages.innerHTML = `<p class="message success">Ciudad agregada con éxito</p>`
 }
 
 function showMessageNotice() {
-    let div_messages = document.getElementById("messages_add_city")
-    div_messages.innerHTML = ""
-    let P_notice = document.createElement("p");
-    let P_notice_content = document.createTextNode("La ciudad ingresada ya se encuentra almacenada");
-    P_notice.appendChild(P_notice_content);
-    div_messages.appendChild(P_notice);
-    P_notice.setAttribute("class", "message notice")
+    div_messages.innerHTML = `<p class="message notice">La ciudad ingresada ya se encuentra almacenada</p>`
+}
+
+function showMessageError() {
+    div_messages.innerHTML = `<p class="message error">Error: La ciudad ingresada no se encuentra en la API o se produjo un error al consultar</p>`
 }
