@@ -39,17 +39,16 @@ function weatherInfo(data) {
     let humidity = data.main.humidity;
     let wind_speed = data.wind.speed;
     let pressure = data.main.pressure;
-
-    let card = `<div class="card">
-                    <h3>${city}</h3>
-                    <img src="http://openweathermap.org/img/wn/${icon}.png" alt="Imagen">
-                    <p>Temperatura: ${temp}°</p>
-                    <p>Sensación térmica: ${feels_like}°</p>
-                    <p>Humedad: ${humidity}%</p>
-                    <p>Velocidad del viento: ${wind_speed}km/h</p>
-                    <p>Presión: ${pressure} P</p>
-                </div>`
+    
     if (weather_result) {
-        weather_result.innerHTML += card;
+        weather_result.innerHTML += `<div class="card">
+        <h3>${city}</h3>
+        <img src="http://openweathermap.org/img/wn/${icon}.png" alt="Imagen">
+        <p>Temperatura: ${temp}°</p>
+        <p>Sensación térmica: ${feels_like}°</p>
+        <p>Humedad: ${humidity}%</p>
+        <p>Velocidad del viento: ${wind_speed}km/h</p>
+        <p>Presión: ${pressure} P</p>
+    </div>`
     }
 }
