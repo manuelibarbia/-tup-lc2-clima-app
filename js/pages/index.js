@@ -18,17 +18,17 @@ async function consultApi(city_to_consult) {
     if (weather_result) {
         weather_result.innerHTML = "";
     }
-    await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city_to_consult}&appid=${api_key}&units=metric&lang=es`)
+    try {
+        await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city_to_consult}&appid=${api_key}&units=metric&lang=es`)
         .then((response) => {
             return response.json();
         })
-        .then(data => {
+        .then((data) => {
             weatherInfo(data);
         })
-        .catch((error) => {
-            console.error("Se ha encontrado un error: "+ error);
-            return false;
-        });
+    } catch (error) {
+        console.error("Error encontrado: " + error)
+    }
 }
 
 function weatherInfo(data) {

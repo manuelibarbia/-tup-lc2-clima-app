@@ -4,10 +4,9 @@ const mail_div = document.getElementById("wrong-mail")
 function validateEmail() {
     const email = document.getElementById("email")
     if (email_expression.test(email.value) == false){
-        showWrongEmail();
+        mail_div.innerHTML = `<p class="message error">Ingrese un Email válido</p>`
     }
-}
-
-function showWrongEmail() {
-    mail_div.innerHTML = `<p class="message error">Ingrese un Email válido</p>`
+    else {
+        mail_div.innerHTML = ""
+    }
 }
